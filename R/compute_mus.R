@@ -10,19 +10,20 @@
 #' @param dist_mat a distance matrix computed between \code{n} observations.
 #' @param n1 order of the first NN considered. Default is 1.
 #' @param n2 order of the second NN considered. Default is 2.
-#' @param Nq logical indicator. If \code{TRUE}, it provides the \code{N^q} matrix
-#' needed for fitting the Hidalgo model.
+#' @param Nq logical indicator. If \code{TRUE}, it provides the \code{N^q}
+#' matrix needed for fitting the Hidalgo model.
 #' @param q integer, number of NN considered to build \code{N^q}.
 #'
 #' @references
 #' Facco E, D'Errico M, Rodriguez A, Laio A (2017). "Estimating the intrinsic
 #' dimension of datasets by a minimal neighborhood information."
-#' Scientific Reports, 7(1), 1-8.
-#' ISSN 20452322, doi: 10.1038/s41598-017-11873-y.
+#' Scientific Reports, 7(1).
+#' ISSN 20452322, \doi{10.1038/s41598-017-11873-y}.
 #'
-#' Denti F, Doimo D, Laio A, Mira A (2022+). "Distributional Results for
-#' Model-Based Intrinsic Dimension Estimators."
-#' arXiv preprint. 2104.13832, \url{https://arxiv.org/abs/2104.13832}.
+#' Denti F, Doimo D, Laio A, Mira A (2022). "The generalized ratios intrinsic
+#' dimension estimator."
+#' Scientific Reports, 12(20005).
+#' ISSN  20452322, \doi{10.1038/s41598-022-20991-1}.
 #'
 #' @return a vector containing the ratio statistics, an object of class
 #' \code{mus}. The length of the vector is equal to the number of observations
@@ -53,8 +54,17 @@ compute_mus <- function(X = NULL,
     stop("Please provide either a dataset X or a distance matrix",
          call. = FALSE)
   }
+
   D <- NULL
+
   if (is.null(dist_mat)) {
+    if(any(is.na(X))){
+      stop("There are missing values in the provided dataset.
+Please remove the problematic observations and try again.",
+           call. = FALSE)
+    }
+
+    X     <- as.matrix(X)
     D     <- ncol(X)
     n     <- n0 <- nrow(X)
     check <- 0
@@ -95,8 +105,32 @@ compute_mus <- function(X = NULL,
     attr(mus, "upper_D") <- D
 
   } else {
-    n0                                <- nrow(dist_mat)
-    dummy                             <- dist_mat
+    # checks on dist_mat
+
+    # if it is of class dist, then transform it into a matrix
+    if(inherits(dist_mat,"dist")){
+      dist_mat <- as.matrix(dist_mat)
+    }
+
+    ## does it contain non-negative distances?
+    if(!all(dist_mat>=0)){
+      stop("Negative distances detected in dist_mat. Please provide a valid distance matrix",
+           call. = FALSE)
+    }
+    # is it symmetric?
+    if(!isSymmetric(dist_mat)){
+      stop("The provided distance matrix is not symmetric.
+Please provide a valid distance matrix",
+           call. = FALSE)
+    }
+    # NA?
+    if(any(is.na(X))){
+      stop("There are missing values in the provided distance matrix.
+Please remove the problematic observations and try again.",
+           call. = FALSE)
+    }
+    n0    <- nrow(dist_mat)
+    dummy <- dist_mat
     dummy[lower.tri(dummy, diag = TRUE)] <- -1
     inds     <- unique(which(dummy == 0, arr.ind = TRUE)[, 2])
 
@@ -150,7 +184,7 @@ compute_mus <- function(X = NULL,
 #' @export
 print.mus <- function(x, ...) {
 
-  if(is.matrix(x[[2]])){
+  if(is.list(x)){ #check if the mus object contains Nq
     nn <- length(x[[1]])
   }else{
     nn <- length(x)
@@ -194,7 +228,7 @@ plot.mus <- function(x, range_d = NULL, ...) {
 
   if(!is.null(range_d)){
 
-  for (i in 1:length(range_d)) {
+  for (i in seq_along(range_d)) {
     y <- dgera(sort(x),
                n1 = n1,
                n2 = n2,

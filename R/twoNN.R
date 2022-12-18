@@ -5,7 +5,7 @@
 #' using least squares estimation, depending on the specification of the
 #' argument \code{method}. This model has been originally presented in
 #' \href{https://www.nature.com/articles/s41598-017-11873-y}{Facco et al., 2017}
-#' . See also \href{https://arxiv.org/abs/2104.13832}{Denti et al., 2021+}
+#' . See also \href{https://www.nature.com/articles/s41598-022-20991-1}{Denti et al., 2022}
 #' for more details.
 #'
 #' @param X data matrix with \code{n} observations and \code{D} variables.
@@ -30,9 +30,9 @@
 #'
 #'
 #' @return list characterized by a class type that depends on the \code{method}
-#' chosen. Regardless the \code{method}, the output list always contains the
+#' chosen. Regardless of the \code{method}, the output list always contains the
 #' object \code{est}, which provides the estimated intrinsic dimension along
-#' with uncertainty quantification. The remaining objects varies with the
+#' with uncertainty quantification. The remaining objects vary with the
 #' estimation method. In particular, if
 #' \describe{
 #' \item{\code{method = "mle"}}{the output reports the MLE and the relative
@@ -41,7 +41,7 @@
 #' used for the computation;}
 #' \item{\code{method = "bayes"}}{the output contains the {(1 + \code{alpha}) / 2}
 #' and {(1 - \code{alpha}) / 2}
-#' quantiles, mean, mode and median of the posterior distribution of \code{d}.}
+#' quantiles, mean, mode, and median of the posterior distribution of \code{d}.}
 #' }
 #'
 #' @export
@@ -49,12 +49,13 @@
 #' @references
 #' Facco E, D'Errico M, Rodriguez A, Laio A (2017). "Estimating the intrinsic
 #' dimension of datasets by a minimal neighborhood information."
-#' Scientific Reports, 7(1), 1-8.
-#' ISSN 20452322, doi: 10.1038/s41598-017-11873-y.
+#' Scientific Reports, 7(1).
+#' ISSN 20452322, \doi{10.1038/s41598-017-11873-y}.
 #'
-#' Denti F, Doimo D, Laio A, Mira A (2022+). "Distributional Results for
-#' Model-Based Intrinsic Dimension Estimators."
-#' arXiv preprint. 2104.13832, \url{https://arxiv.org/abs/2104.13832}.
+#' Denti F, Doimo D, Laio A, Mira A (2022). "The generalized ratios intrinsic
+#' dimension estimator."
+#' Scientific Reports, 12(20005).
+#' ISSN  20452322, \doi{10.1038/s41598-022-20991-1}.
 #'
 #' @examples
 #' # dataset with 1000 observations and id = 2
@@ -77,6 +78,15 @@ twonn <- function(X = NULL,
                   a_d = 0.001,
                   b_d = 0.001,
                   ...) {
+
+  if (!is.null(mus)) {
+    if( !all(mus >= 1) ){
+      stop("Detected some values in mus below 1.
+           Please provide a proper vector of ratios.",
+           call. = FALSE)
+    }
+    }
+
   if (is.null(mus)) {
     if (is.null(X) & is.null(dist_mat)) {
       stop("Please provide either a dataset X or a distance matrix",
@@ -93,6 +103,7 @@ twonn <- function(X = NULL,
   }
 
   method <- match.arg(method)
+
 
   switch(
     method,

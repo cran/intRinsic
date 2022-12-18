@@ -6,12 +6,13 @@
 \alias{intRinsic-package}
 \title{intRinsic: Likelihood-Based Intrinsic Dimension Estimators}
 \description{
-Provides functions to estimate the intrinsic dimension of a dataset via likelihood-based approaches. Specifically, the package implements the 'TWO-NN' and 'Gride' estimators and the 'Hidalgo' Bayesian mixture model. In addition, the first reference contains an extended vignette on the usage of the 'TWO-NN' and 'Hidalgo' models. References: Denti (2022+, <arXiv:2102.11425>); Allegra et al. (2020, <doi:10.1038/s41598-020-72222-0>); Denti et al. (2022+, <arXiv:2104.13832>); Facco et al. (2017, <doi:10.1038/s41598-017-11873-y>); Santos-Fernandez et al. (2021, <arXiv:1902.10459>).
+Provides functions to estimate the intrinsic dimension of a dataset via likelihood-based approaches. Specifically, the package implements the 'TWO-NN' and 'Gride' estimators and the 'Hidalgo' Bayesian mixture model. In addition, the first reference contains an extended vignette on the usage of the 'TWO-NN' and 'Hidalgo' models. References: Denti (2022+, \href{https://arxiv.org/abs/2102.11425}{arXiv:2102.11425}); Allegra et al. (2020, \doi{10.1038/s41598-020-72222-0}); Denti et al. (2022, \doi{10.1038/s41598-022-20991-1}); Facco et al. (2017, \doi{10.1038/s41598-017-11873-y}); Santos-Fernandez et al. (2021, \doi{10.1038/s41598-022-20991-1}).
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/Fradenti/intRinsic}
+  \item Report bugs at \url{https://github.com/fradenti/intRinsic/issues}
 }
 
 }

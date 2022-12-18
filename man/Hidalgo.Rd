@@ -51,11 +51,12 @@ Hidalgo(
 
 \item{q}{integer, first local homogeneity parameter. Default is 3.}
 
-\item{xi}{real between 0 and 1, second local homogeneity parameter.
+\item{xi}{real number between 0 and 1, second local homogeneity parameter.
 Default is 0.75.}
 
-\item{alpha_Dirichlet}{parameter of the Dirichlet prior on the mixture
-weights. Default is 0.05, inducing a sparse mixture.}
+\item{alpha_Dirichlet}{parameter of the symmetric Dirichlet prior
+on the mixture weights. Default is 0.05, inducing a sparse mixture.
+Values that are too small (i.e., lower than 0.005) may cause underflow.}
 
 \item{a0_d}{shape parameter of the Gamma prior on \code{d}.}
 
@@ -120,7 +121,7 @@ in Allegra et al., 2020. The model is a Bayesian mixture of Pareto
 distribution with modified likelihood to induce homogeneity across
 neighboring observations. The model can segment the observations into
 multiple clusters characterized by different
-intrinsic dimensions, which allows to capture hidden patterns in the data.
+intrinsic dimensions. This permits to capture hidden patterns in the data.
 For more details on the algorithm, refer to
 \href{https://www.nature.com/articles/s41598-020-72222-0}{Allegra et al., 2020}.
 For an example of application to basketball data, see
@@ -145,13 +146,12 @@ id_by_class(h_out, oracle)
 Allegra M, Facco E, Denti F, Laio A, Mira A (2020).
 “Data segmentation based on the local intrinsic dimension.”
 Scientific Reports, 10(1), 1–27. ISSN 20452322,
-doi: 10.1038/s41598-020-72222-0, 1902.10459,
-\url{https://arxiv.org/abs/1902.10459}
+\doi{10.1038/s41598-020-72222-0, 1902.10459},
 
 Santos-Fernandez E, Denti F, Mengersen K, Mira A (2021).
 “The role of intrinsic dimension in high-resolution player tracking data –
 Insights in basketball.” Annals of Applied Statistics - Forthcoming, –
-ISSN 2331-8422, 2002.04148, \url{https://arxiv.org/abs/2002.04148}
+ISSN 2331-8422, 2002.04148, \doi{10.1038/s41598-022-20991-1}
 }
 \seealso{
 \code{\link{id_by_class}} and \code{\link{clustering}}

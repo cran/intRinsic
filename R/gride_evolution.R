@@ -7,7 +7,7 @@
 #' average neighborhood size) involved in the estimation, the function computes
 #' a sequence of \code{Gride} models with increasing NN orders, \code{n1} and
 #' \code{n2}.
-#' See also \href{https://arxiv.org/abs/2104.13832}{Denti et al., 2021+}
+#' See also \href{https://www.nature.com/articles/s41598-022-20991-1}{Denti et al., 2022}
 #' for more details.
 #'
 #' @param X data matrix with \code{n} observations and \code{D} variables.
@@ -16,7 +16,7 @@
 #' @param vec_n2 vector of integers, containing the larger NN orders considered
 #' in the evolution.
 #' @param upp_bound upper bound for the interval used in the numerical
-#' optimization (via \code{optimize}). Default set to 50.
+#' optimization (via \code{optimize}). Default is set to 50.
 #'
 #' @return list containing the Gride evolution, the corresponding NN distance
 #' ratios, the average n2-th NN order distances, and the NN orders considered.
@@ -26,9 +26,10 @@
 #' @export
 #'
 #' @references
-#' Denti F, Doimo D, Laio A, Mira A (2022+). "Distributional Results for
-#' Model-Based Intrinsic Dimension Estimators."
-#' arXiv preprint. 2104.13832, \url{https://arxiv.org/abs/2104.13832}.
+#' Denti F, Doimo D, Laio A, Mira A (2022). "The generalized ratios intrinsic
+#' dimension estimator."
+#' Scientific Reports, 12(20005).
+#' ISSN  20452322, \doi{10.1038/s41598-022-20991-1}.
 #'
 #' @examples
 #' \donttest{

@@ -56,21 +56,20 @@ id_by_class <- function(object, class) {
 #'
 print.hidalgo_class <- function(x, ... ){
   cat("Posterior ID by class:")
-  rownames(x) = NULL
+  rownames(x) <- NULL
   print(knitr::kable(x))
   invisible(x)
 }
-
-
 
 #' Posterior similarity matrix and partition estimation
 #'
 #' The function computes the posterior similarity (coclustering) matrix (psm)
 #' and estimates a representative partition of the observations from the MCMC
-#' output. The user can provide the desired number of clusters, or estimate a
-#' partition minimizing a loss function on the space of the partitions.
-#' In the latter case, function uses the package \code{salso}
-#' (\href{https://arxiv.org/abs/2105.04451}{Dahl et al., 2021+}),
+#' output. The user can provide the desired number of clusters or estimate a
+#' optimal clustering solution by minimizing a loss function on the space
+#' of the partitions.
+#' In the latter case, the function uses the package \code{salso}
+#' (\href{https://cran.r-project.org/package=salso}{Dahl et al., 2021}),
 #' that the user needs to load.
 #'
 #' @param object object of class \code{Hidalgo}, the output of the
@@ -97,8 +96,14 @@ print.hidalgo_class <- function(x, ... ){
 #' @seealso \code{\link{Hidalgo}}, \code{\link[salso]{salso}}
 #'
 #' @references
-#' David B. Dahl, Devin J. Johnson and Peter Müller (2021). salso: Search
-#' Algorithms and Loss Functions for Bayesian Clustering. R package version
+#' D. B. Dahl, D. J. Johnson, and P. Müller (2022),
+#' "Search Algorithms and Loss Functions for Bayesian Clustering",
+#' Journal of Computational and Graphical Statistics,
+#' \doi{10.1080/10618600.2022.2069779}.
+#'
+#' David B. Dahl, Devin J. Johnson and Peter Müller (2022). "salso: Search
+#' Algorithms and Loss Functions for Bayesian Clustering".
+#' R package version
 #' 0.3.0. \url{https://CRAN.R-project.org/package=salso}
 #'
 #' @examples
@@ -130,7 +135,7 @@ clustering <- function(object,
                     stats::cutree(dendr, k = K)
                   },
                   "salso" = {
-                    factor(salso::salso(object$membership_labels, ...))
+                    salso::salso(object$membership_labels, ...)
                   })
 
   Res <-
@@ -138,7 +143,7 @@ clustering <- function(object,
       clust = factor(clust),
       psm = psm,
       chosen_method = clustering_method,
-      K = K
+      K = length(unique(clust))
     )
   structure(Res, class = c("hidalgo_psm", class(Res)))
 }
@@ -153,12 +158,12 @@ clustering <- function(object,
 #' @export
 print.hidalgo_psm <- function(x, ...) {
   cat("Estimated clustering solution summary:\n\n")
-  cat(paste0("Method: ", x$chosen_method, ".\n"))
+  cat(paste0("Method: ", x$chosen_method, "\n"))
 
   if (x$chosen_method == "dendrogram") {
-    cat(paste0("Retrieved clusters: ", x$K, ".\n"))
+    cat(paste0("Retrieved clusters: ", x$K, "\n"))
   } else{
-    cat(paste0("Retrieved clusters: ", length(unique(x$clust)), ".\n"))
+    cat(paste0("Retrieved clusters: ", length(unique(x$clust)), "\n"))
   }
 
   cat("Clustering frequencies:")

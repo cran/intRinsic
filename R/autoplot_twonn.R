@@ -27,7 +27,8 @@ autoplot.twonn_linfit <- function(object,
   y    <- lmod$model$y
   Res  <- object$est
 
-  p1 <- ggplot2::qplot(x, y) +
+  p1 <- ggplot2::ggplot()+
+    ggplot2::geom_point(ggplot2::aes(x = x, y = y)) +
     ggplot2::theme_bw() +
     ggplot2::geom_abline(
       intercept = 0,
@@ -144,7 +145,7 @@ autoplot.twonn_bayes <-
 #' @seealso \code{\link{twonn}}
 #'
 #' @return \code{\link[ggplot2]{ggplot2}} object displaying the point estimate
-#' and confidence interval obtained via maximum likelihood approach of the
+#' and confidence interval obtained via the maximum likelihood approach of the
 #' \code{id} parameter.
 #'
 #' @family autoplot methods
