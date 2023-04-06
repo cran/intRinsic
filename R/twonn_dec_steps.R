@@ -27,10 +27,32 @@ twonn_dec_by <- function(X,
   if (!is.null(seed)) {
     set.seed(seed)
   }
-  n               <- nrow(X)
+
+  X     <- as.matrix(X)
+  D     <- ncol(X)
+  n     <- n0 <- nrow(X)
+  check <- 0
+  check <- duplicated(X)
+
+  if (sum(check) > 0) {
+    X <- X[-which(check),]
+    n <- nrow(X)
+    warning(
+      paste0(
+        "\n  Duplicates are present and will be removed.
+        \n  Original sample size: ",
+        n0,
+        ". New sample size: ",
+        n,
+        "."
+      ),
+      call. = FALSE
+    )
+  }
+
   if (floor(2 ^ (-steps) * n)  <= 2) {
     stop(
-"Too many steps, no observations left. Please lower the number of steps considered",
+      "Too many steps, no observations left. Please lower the number of steps considered",
       call. = FALSE
     )
   }
@@ -45,7 +67,7 @@ twonn_dec_by <- function(X,
   mudots             <- K$nn.dist[, 2] / K$nn.dist[, 1]
   avg_distance_n2[1] <- mean(K$nn.dist[, 2])
   ests               <- twonn_mle(mudots)
-  twonns[1, ]         <- ests$est
+  twonns[1, ]        <- ests$est
 
 
   for (w in 2:(W)) {
@@ -74,7 +96,7 @@ twonn_dec_by <- function(X,
 
 
 
-#' @name twonn_decimated
+#' @name twonn_decimation
 #'
 #' @param x object of class \code{twonn_dec_prop}, obtained from the function
 #' \code{twonn_dec_prop()}.
@@ -97,7 +119,7 @@ print.twonn_dec_by <- function(x, ...) {
 
 
 
-#' @name twonn_decimated
+#' @name twonn_decimation
 #'
 #' @param x object of class \code{twonn_dec_prop}, obtained from the function
 #' \code{twonn_dec_prop()}.

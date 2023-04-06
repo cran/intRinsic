@@ -44,16 +44,12 @@
 #'
 #' @seealso \code{\link{twonn}}
 #'
-#' @examples
-#' X <- replicate(4,rnorm(1000))
-#' twonn_decimation(X,,method = "proportions",
-#'                 proportions = c(1,.5,.2,.1,.01))
-#'
-twonn_decimation <- function(X,
+twonn_decimated <- function(X,
                             method = c("steps", "proportions"),
                             steps = 0,
                             proportions = 1,
                             seed = NULL) {
+  .Deprecated("twonn_decimation")
   method <- match.arg(method)
 
   if (steps == 0 & length(proportions) == 1) {
@@ -75,4 +71,5 @@ twonn_decimation <- function(X,
                 method = "mle")
   )
   return(res)
+
 }
