@@ -1,13 +1,13 @@
-28d27e9ada7cac0f99c30e0d93a7caa0 *DESCRIPTION
+bde0d3e0a68da727119f85b22e2a1b1a *DESCRIPTION
 1c68092549f3a5c7a489a7494e5d0c5f *LICENSE
-8e3a72643eed1864a480fcdc81515748 *NAMESPACE
-73f697bfe58d4cfa3fec6a0b379e873c *NEWS.md
+8c2fbd9e8b15272efb9bf7a7dae92ecf *NAMESPACE
+6c7074d46a076270cbc25503be3a9659 *NEWS.md
 13ff595cd1936a740b6bf048e2498872 *R/RcppExports.R
-c8ed157bcfc1ef3e2699ccbb92fa5294 *R/autoplot_gride.R
+a0a67adc50da0561a07adb3e94999d1e *R/autoplot_gride.R
 2ceea3cb190d48767362b0a4eb7e589f *R/autoplot_hidalgo.R
 213860811af94509802ce49c7cb87b5c *R/autoplot_hidalgo_aux.R
 4b827844e1fe717fb15086f9efc648e9 *R/autoplot_twonn.R
-315e548631b8127e20589a4781ba09a9 *R/compute_mus.R
+5a0deec286c189ffb387c325ebc9317e *R/compute_mus.R
 6b34520e7d22670b9045348ddd545966 *R/general_auxiliary.R
 f394d0cebe12bb996345cddde5990dec *R/gera_distribution.R
 f8f8c6440d5cd42eca17d87de77ceb3e *R/gride.R
@@ -15,7 +15,7 @@ e6c0993f506db000b83d3db4c724f4ec *R/gride_bayes.R
 7b840a135bd64d14bc88badeed26890e *R/gride_evolution.R
 514c8d29875649a17ee98d91f46f5aa2 *R/gride_mle.R
 5fbc4a1a304d04a438f6680a2a2d0c68 *R/gride_mle_aux.R
-bc1edcfb7af120461ba01d757b0e4c99 *R/hidalgo.R
+cf365fe185dfd7258adcd0858faf32cf *R/hidalgo.R
 7cf95c1fd15df85a579bf089c1640cba *R/hidalgo_Aux.R
 577e8d5c472551683bf5de9dfe125c8f *R/hidalgo_postproc.R
 d00cbfe0429b79ed99ab3b82ef41d04f *R/intRinsic-package.R
@@ -28,7 +28,7 @@ e0cbeae830476bda5125663bbf76d261 *R/twonn_dec_depr.R
 e51c6a2e61efda06fe8151b5693398ac *R/twonn_linfit.R
 96aaba8c7a480ed71187f1a21fad2de1 *R/twonn_mle.R
 68e8510c0d87f6c8ea257f2724c383ed *R/zzz.R
-71726bba292b87c83fd356f3af4bd157 *README.md
+bc308d12cc57248356cc612800d39137 *README.md
 ea124a494ad7922985532ad3b308e4d5 *build/partial.rdb
 9fb83bf69dbcb9639da3e6c7125a45d2 *inst/CITATION
 e80a4dd7f09fb998631a9f966c4785c2 *man/Hidalgo.Rd
@@ -42,7 +42,7 @@ f05d51a2e3538f86660a1397060be2d6 *man/autoplot.twonn_linfit.Rd
 105473c7a81cf28fb31349751c5e41ce *man/autoplot.twonn_mle.Rd
 e154f9aad70d5b5957da7f6fb54e37a5 *man/auxHidalgo.Rd
 3e131758b3602895383764b6acf51781 *man/clustering.Rd
-0e4f05f6bb321fe9dd1b7c6d777aaf55 *man/compute_mus.Rd
+ffe6486f802b501b34ca628b49c48674 *man/compute_mus.Rd
 6e86dc64af5cdc7fbf03730fe2a7823a *man/figures/intLogo.png
 b4d688704914edfde41f64bad6148831 *man/figures/logo.png
 3d61c084d52b042d1ec979d6e38045ab *man/generalized_ratios_distribution.Rd

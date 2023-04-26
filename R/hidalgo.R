@@ -134,7 +134,7 @@ Hidalgo <- function(X  = NULL,
         Nq = TRUE
       )
     mus       <- InputList$mus
-    Nq        <- InputList$Nq
+    Nq        <- InputList$NQ
 
   } else if (is.null(X) & is.null(dist_mat)) {
     stop("Please provide either a dataset or a distance matrix", call. = FALSE)
@@ -398,7 +398,7 @@ print.Hidalgo <- function(x, ...) {
       "\nElapsed time: ",
       round(x$recap[["elapsed"]], 4),
       " ",
-      attr(x$recap[["elapsed"]], "units\n")
+      attr(x$recap[["elapsed"]], "units"),"\n"
     )
   )
   invisible(x)

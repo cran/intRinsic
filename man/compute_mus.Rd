@@ -3,12 +3,15 @@
 \name{compute_mus}
 \alias{compute_mus}
 \alias{print.mus}
+\alias{print.mus_Nq}
 \alias{plot.mus}
 \title{Compute the ratio statistics needed for the intrinsic dimension estimation}
 \usage{
 compute_mus(X = NULL, dist_mat = NULL, n1 = 1, n2 = 2, Nq = FALSE, q = 3)
 
 \method{print}{mus}(x, ...)
+
+\method{print}{mus_Nq}(x, ...)
 
 \method{plot}{mus}(x, range_d = NULL, ...)
 }
@@ -35,12 +38,13 @@ function \code{compute_mus()}.}
 is superimposed to the histogram of \code{mus}.}
 }
 \value{
-a vector containing the ratio statistics, an object of class
-\code{mus}. The length of the vector is equal to the number of observations
-considered, unless ties are present in the dataset. In that case, the
-duplicates are removed. Optionally, if \code{Nq} is \code{TRUE}, the function
-returns a list containing both the ratio statistics and the adjacency
-matrix \code{N^q}.
+the principal output of this function is a vector containing the
+ratio statistics, an object of class \code{mus}. The length of the vector is
+equal to the number of observations considered, unless ties are present in
+the dataset. In that case, the duplicates are removed. Optionally, if
+\code{Nq} is \code{TRUE}, the function returns an object of class
+\code{mus_Nq}, a list containing both the ratio statistics \code{mus} and the
+adjacency matrix \code{NQ}.
 }
 \description{
 The function \code{compute_mus} computes the ratios of distances between
