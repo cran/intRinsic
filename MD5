@@ -1,7 +1,7 @@
-bde0d3e0a68da727119f85b22e2a1b1a *DESCRIPTION
+4f174c5f3369d8cee7fedd16236e01ad *DESCRIPTION
 1c68092549f3a5c7a489a7494e5d0c5f *LICENSE
 8c2fbd9e8b15272efb9bf7a7dae92ecf *NAMESPACE
-6c7074d46a076270cbc25503be3a9659 *NEWS.md
+e9198600d55bba93820d5e20005a76d6 *NEWS.md
 13ff595cd1936a740b6bf048e2498872 *R/RcppExports.R
 a0a67adc50da0561a07adb3e94999d1e *R/autoplot_gride.R
 2ceea3cb190d48767362b0a4eb7e589f *R/autoplot_hidalgo.R
@@ -15,11 +15,12 @@ e6c0993f506db000b83d3db4c724f4ec *R/gride_bayes.R
 7b840a135bd64d14bc88badeed26890e *R/gride_evolution.R
 514c8d29875649a17ee98d91f46f5aa2 *R/gride_mle.R
 5fbc4a1a304d04a438f6680a2a2d0c68 *R/gride_mle_aux.R
-cf365fe185dfd7258adcd0858faf32cf *R/hidalgo.R
+7538651d9a4e8d5673e9e760a5d5f063 *R/hidalgo.R
 7cf95c1fd15df85a579bf089c1640cba *R/hidalgo_Aux.R
 577e8d5c472551683bf5de9dfe125c8f *R/hidalgo_postproc.R
 d00cbfe0429b79ed99ab3b82ef41d04f *R/intRinsic-package.R
-c50d0f9be5cb9c5314f80e35932009b9 *R/twoNN.R
+24d855cf0816e287ca2d174643ce67d3 *R/rdir_exmcmcPack.R
+cbe308f00375f732c3e7bf81f52a2630 *R/twoNN.R
 ee63583fb1efe218fdf4108a61a9ad4d *R/twonn_bayes.R
 a142800e772f82edd17a3e6c97bff633 *R/twonn_dec.R
 e0cbeae830476bda5125663bbf76d261 *R/twonn_dec_depr.R
@@ -28,10 +29,10 @@ e0cbeae830476bda5125663bbf76d261 *R/twonn_dec_depr.R
 e51c6a2e61efda06fe8151b5693398ac *R/twonn_linfit.R
 96aaba8c7a480ed71187f1a21fad2de1 *R/twonn_mle.R
 68e8510c0d87f6c8ea257f2724c383ed *R/zzz.R
-bc308d12cc57248356cc612800d39137 *README.md
+18d01dad2e0fe7971e25de980ea76cf3 *README.md
 ea124a494ad7922985532ad3b308e4d5 *build/partial.rdb
 9fb83bf69dbcb9639da3e6c7125a45d2 *inst/CITATION
-e80a4dd7f09fb998631a9f966c4785c2 *man/Hidalgo.Rd
+d8dc7e78cd90080617eb47f78153817c *man/Hidalgo.Rd
 d98f98a2fb45474e3d5553e2f3124905 *man/Swissroll.Rd
 3ce61df7e477b7d47b8db287e4b6ffdb *man/autoplot.Hidalgo.Rd
 841952c178cfc4a67a6e02590358fd1a *man/autoplot.gride_bayes.Rd
@@ -51,7 +52,7 @@ dd752d7f477b31e31fa6e8c026c46725 *man/gride_evolution.Rd
 2a2ee0577a888393b69183421d9f9df1 *man/id_by_class.Rd
 fe44eba35ec4855a3560aaf5c68ce402 *man/intRinsic-package.Rd
 aa6e6302e2eefe35cd337e5611392674 *man/reexports.Rd
-a3c13dcd3f83ecaf09b839c404e058fd *man/twonn.Rd
+03097230d91631edc5064445f5652eb1 *man/twonn.Rd
 08eb6aa7b44018e869f13e74606c2635 *man/twonn_decimated.Rd
 90db1f090afb8e9ede395d4eef652722 *man/twonn_decimation.Rd
 c89d6b95d18721894ab45341d0fbc7a6 *src/Makevars

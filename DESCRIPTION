@@ -1,6 +1,6 @@
 Package: intRinsic
 Title: Likelihood-Based Intrinsic Dimension Estimators
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: c(
     person("Francesco", "Denti", ,"francescodenti.personal@gmail.com", 
     role = c("aut", "cre", "cph"),
@@ -24,17 +24,17 @@ License: MIT + file LICENSE
 URL: https://github.com/Fradenti/intRinsic
 BugReports: https://github.com/fradenti/intRinsic/issues
 Depends: R (>= 4.2.0)
-Imports: dplyr, FNN, ggplot2, knitr, latex2exp, MCMCpack, Rcpp,
-        reshape2, rlang, salso, stats, utils
+Imports: dplyr, FNN, ggplot2, knitr, latex2exp, Rcpp, reshape2, rlang,
+        salso, stats, utils
 LinkingTo: Rcpp, RcppArmadillo
 NeedsCompilation: yes
 ByteCompile: true
 Encoding: UTF-8
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.0
 Suggests: covr
-Packaged: 2023-04-26 15:34:55 UTC; francescodenti
+Packaged: 2024-01-15 12:32:32 UTC; francescodenti
 Author: Francesco Denti [aut, cre, cph]
     (<https://orcid.org/0000-0003-2978-4702>),
   Andrea Gilardi [aut] (<https://orcid.org/0000-0002-9424-7439>)
 Repository: CRAN
-Date/Publication: 2023-04-26 16:10:02 UTC
+Date/Publication: 2024-01-15 12:50:02 UTC
