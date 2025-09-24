@@ -1,7 +1,7 @@
-5016911a96c669f9afa5a19319b64a48 *DESCRIPTION
+f99bebd26c6f37e1156f0872cfc09f4a *DESCRIPTION
 1c68092549f3a5c7a489a7494e5d0c5f *LICENSE
 8c2fbd9e8b15272efb9bf7a7dae92ecf *NAMESPACE
-15b97d13bc39702bb53fac170c2018b8 *NEWS.md
+48a9d94ff5ebaaea036fc14f1a9f6ba9 *NEWS.md
 5ad1d8cc75bc0d53f53f0f2d87cfb755 *R/RcppExports.R
 a0a67adc50da0561a07adb3e94999d1e *R/autoplot_gride.R
 2ceea3cb190d48767362b0a4eb7e589f *R/autoplot_hidalgo.R
@@ -29,8 +29,8 @@ e0cbeae830476bda5125663bbf76d261 *R/twonn_dec_depr.R
 e51c6a2e61efda06fe8151b5693398ac *R/twonn_linfit.R
 96aaba8c7a480ed71187f1a21fad2de1 *R/twonn_mle.R
 68e8510c0d87f6c8ea257f2724c383ed *R/zzz.R
-ff28ced433e9c64d144683c484a28937 *README.md
-f61db891eb928123aba4412ca322f508 *build/partial.rdb
+86e75a8fb6187c371445736d1c2257a6 *README.md
+b52aabe9a2757fc86742763db9dafc9b *build/partial.rdb
 9fb83bf69dbcb9639da3e6c7125a45d2 *inst/CITATION
 d8dc7e78cd90080617eb47f78153817c *man/Hidalgo.Rd
 d98f98a2fb45474e3d5553e2f3124905 *man/Swissroll.Rd
@@ -56,9 +56,9 @@ aa6e6302e2eefe35cd337e5611392674 *man/reexports.Rd
 03097230d91631edc5064445f5652eb1 *man/twonn.Rd
 08eb6aa7b44018e869f13e74606c2635 *man/twonn_decimated.Rd
 90db1f090afb8e9ede395d4eef652722 *man/twonn_decimation.Rd
-7851171b0dd6f58ad64dd9ba13e22a85 *src/A_AUX.cpp
+14c49af72ac242367b05bb18c65be2ad *src/A_AUX.cpp
 4dc317a45c9b10a0410367c10d44f39e *src/A_AUX.h
-94e59f71ff419bdf1bd82298ee7719f6 *src/B_FULLCOND.cpp
+014a536850fbe3fe1b09dba85c0fbccf *src/B_FULLCOND.cpp
 cf32cbac954115b1dc8b065b5370bdda *src/B_FULLCOND.h
 d22cd11a3d0568f77f01935a02178a6f *src/C_GAMMA.cpp
 4ce02e0899ca8b533060dd2db119b6fa *src/C_GAMMA.h

@@ -1,6 +1,6 @@
 Package: intRinsic
 Title: Likelihood-Based Intrinsic Dimension Estimators
-Version: 1.1.0
+Version: 1.1.1
 Authors@R: c(
     person("Francesco", "Denti", ,"francescodenti.personal@gmail.com", 
     role = c("aut", "cre", "cph"),
@@ -30,10 +30,10 @@ LinkingTo: Rcpp, RcppArmadillo
 NeedsCompilation: yes
 ByteCompile: true
 Encoding: UTF-8
-RoxygenNote: 7.3.2
-Packaged: 2024-09-12 14:06:38 UTC; francescodenti
-Author: Francesco Denti [aut, cre, cph]
-    (<https://orcid.org/0000-0003-2978-4702>),
-  Andrea Gilardi [aut] (<https://orcid.org/0000-0002-9424-7439>)
+RoxygenNote: 7.3.3
+Packaged: 2025-09-24 18:00:38 UTC; fradenti
+Author: Francesco Denti [aut, cre, cph] (ORCID:
+    <https://orcid.org/0000-0003-2978-4702>),
+  Andrea Gilardi [aut] (ORCID: <https://orcid.org/0000-0002-9424-7439>)
 Repository: CRAN
-Date/Publication: 2024-09-12 17:10:02 UTC
+Date/Publication: 2025-09-24 18:20:02 UTC
